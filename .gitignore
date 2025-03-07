@@ -1,3 +1,6 @@
+# Ignore .gitignore itself
+.gitignore
+
 # Ignore OS-specific files
 .DS_Store
 Thumbs.db
