@@ -324,7 +324,7 @@ By considering these uncertainty factors, the pipeline architecture can be desig
 
 This pipeline is designed to process incoming data updates from an external company in the landing zone and ensure that any changes (deltas) are accurately reflected in the reporting database. The pipeline consists of multiple steps, each performed by a separate script:
 
-1. **Data Ingestion ([landing_to_bronze.py](./scripts/landing_to_bronze.py))**
+1. **Data Ingestion ([landing_to_bronze.py](./moving-data/landing_to_bronze.py))**
    - Monitors the landing zone for new or updated data.
    - Loads raw data into a staging area (Bronze layer) for further processing.
 
