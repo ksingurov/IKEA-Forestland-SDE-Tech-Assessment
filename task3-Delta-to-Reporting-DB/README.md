@@ -324,19 +324,19 @@ By considering these uncertainty factors, the pipeline architecture can be desig
 
 This pipeline is designed to process incoming data updates from an external company in the landing zone and ensure that any changes (deltas) are accurately reflected in the reporting database. The pipeline consists of multiple steps, each performed by a separate script:
 
-1. **Data Ingestion ([landing_to_bronze.py](./moving-data/landing_to_bronze.py))**
+1. **Data Ingestion ([landing_to_bronze.py](./pipeline-scripts/moving-data/landing_to_bronze.py))**
    - Monitors the landing zone for new or updated data.
    - Loads raw data into a staging area (Bronze layer) for further processing.
 
-2. **Data Cleaning and Transformation ([bronze_to_silver.py](./scripts/bronze_to_silver.py))**
+2. **Data Cleaning and Transformation ([bronze_to_silver.py](./pipeline-scripts/moving-data/bronze_to_silver.py))**
    - Compares incoming data with existing records in the Bronze layer.
    - Identifies changes, including new records, updates, and deletions.
 
-3. **Further Data Transformation ([silver_to_gold.py](./scripts/silver_to_gold.py))**
+3. **Further Data Transformation ([silver_to_gold.py](./pipeline-scripts/moving-data/silver_to_gold.py))**
    - Applies additional transformations and validations to the data in the Silver layer.
    - Prepares the data for the Gold layer.
 
-4. **Database Update ([gold_to_reporting_db.py](./scripts/gold_to_reporting_db.py))**
+4. **Database Update ([gold_to_reporting_db.py](./pipeline-scripts/moving-data/gold_to_reporting_db.py))**
    - Applies the detected changes to the reporting database, ensuring consistency.
    - Logs the updates for audit and monitoring purposes.
 
